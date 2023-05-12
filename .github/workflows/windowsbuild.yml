@@ -12,7 +12,7 @@ jobs:
       
       - name: Build Server
         run: |
-          go build -o server.exe
+          go build  server.go
           echo "Server built successfully!"
       
       - name: Build Client
