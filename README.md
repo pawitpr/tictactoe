@@ -23,3 +23,6 @@ Client :
 ```
 
 Download the all pre-build binary from: https://github.com/pawitpr/tictactoe/releases/tag/publish"
+
+# Contributing is always Open 
+For the contribute just fork the repo and add some usefull changes and create a pull request 
