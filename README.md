@@ -12,7 +12,7 @@ Server Build :
     chmod +x server
     ./server
 ```
-Or directly download the binary <a href="game link">here</a>
+Or directly download the binary <a href="https://github.com/pawitpr/tictactoe/releases/tag/publish">here</a>
 
 Client :
 ```bash
@@ -22,4 +22,4 @@ Client :
     python main.py
 ```
 
-or just download the pre-build files: <a href="game link"> here </a>
+Download the all pre-build binary from <a href=""https://github.com/pawitpr/tictactoe/releases/tag/publish> </a>
