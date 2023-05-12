@@ -18,7 +18,8 @@ jobs:
       - name: Build Client
         run: |
           cd client/python
-          python -m pip install -r requirements.txt
+          pip install pyinstaller
+          pip install requests
           pyinstaller --onefile main.py
           echo "Client built successfully!"
       
