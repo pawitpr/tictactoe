@@ -12,7 +12,7 @@ Server Build :
     chmod +x server
     ./server
 ```
-Or directly download the binary <a href="https://github.com/pawitpr/tictactoe/releases/tag/publish">here</a>
+Or directly download the binary https://github.com/pawitpr/tictactoe/releases/tag/publish
 
 Client :
 ```bash
@@ -22,4 +22,4 @@ Client :
     python main.py
 ```
 
-Download the all pre-build binary from <a href=""https://github.com/pawitpr/tictactoe/releases/tag/publish> </a>
+Download the all pre-build binary from: https://github.com/pawitpr/tictactoe/releases/tag/publish"
