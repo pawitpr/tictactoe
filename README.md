@@ -22,4 +22,4 @@ Client :
     python main.py
 ```
 
-The Rust Code is not stable nw
+or just download the pre-build files: <a href="game link"> here </a>
