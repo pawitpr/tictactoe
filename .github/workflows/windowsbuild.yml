@@ -1,31 +1,31 @@
-# This is a basic workflow that is manually triggered
-
-name: WindowsBuild
-
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
+name: Build and Upload Artifacts
 on:
-  workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
-        # Default value if no value is explicitly provided
-        default: 'World'
-        # Input has to be provided for the workflow to run
-        required: true
-        # The data type of the input
-        type: string
+  push:
+    branches: [ main ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "greet"
-  greet:
-    # The type of runner that the job will run on
+  build-and-upload:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Building Server
-      run: ls
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      
+      - name: Build Server
+        run: |
+          go build server.go
+          echo "Server built successfully!"
+      
+      - name: Build Client
+        run: |
+          cd client/python
+          python3 -m pip install -r requirements.txt
+          pyinstaller --onefile main.py
+          echo "Client built successfully!"
+      
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: server-and-client
+          path: |
+            ./server
+            ./client/python/dist/main
