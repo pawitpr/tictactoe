@@ -5,7 +5,7 @@ on:
 
 jobs:
   build-and-upload:
-    runs-on: windows-latest
+    runs-on: window-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
