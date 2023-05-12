@@ -5,21 +5,20 @@ on:
 
 jobs:
   build-and-upload:
-    runs-on: window-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
       
       - name: Build Server
         run: |
-          go build server.go
+          go build -o server.exe
           echo "Server built successfully!"
       
       - name: Build Client
         run: |
           cd client/python
-          pip install pyinstaller
-          pip install requests
+          python -m pip install -r requirements.txt
           pyinstaller --onefile main.py
           echo "Client built successfully!"
       
@@ -28,5 +27,5 @@ jobs:
         with:
           name: server-and-client
           path: |
-            ./server
-            ./client/python/dist/main
+            ./server.exe
+            ./client/python/dist/main.exe
